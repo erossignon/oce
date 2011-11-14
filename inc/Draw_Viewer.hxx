@@ -20,16 +20,16 @@
 #include <Draw_Color.hxx>
 
 #ifdef WNT
-#include <windows.h>
-#if !defined(__Draw_API) && !defined(HAVE_NO_DLL)
-# ifdef __Draw_DLL
-#  define __Draw_API __declspec( dllexport )
+# include <windows.h>
+# if !defined(__Draw_API) && !defined(HAVE_NO_DLL)
+#  ifdef __Draw_DLL
+#   define __Draw_API __declspec( dllexport )
+#  else
+#   define __Draw_API /*__declspec( dllimport )*/
+#  endif
 # else
-#  define __Draw_API /*__declspec( dllimport )*/
-# endif
-#endif
-#else
 #  define __Draw_API  
+# endif
 #endif
 const Standard_Integer MAXVIEW  = 30;
 

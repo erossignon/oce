@@ -30,6 +30,8 @@
 # else
 #  define __Draw_API  
 # endif
+#else
+# define __Draw_API
 #endif
 const Standard_Integer MAXVIEW  = 30;
 
